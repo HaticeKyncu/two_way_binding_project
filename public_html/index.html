@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html ng-app="kModul">
+<head>
+<meta charset="utf-8"> 
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+var kModul = angular
+.module("kModul", [])
+.controller("kController", function ($scope) {
+var uye = {
+isim: "Hatice",
+soyisim:"KOYUNCU",
+profil: "img/profil.jpg"
+};
+$scope.uye = uye;
+});
+ 
+ 
+</script>
+</head>
+<body>
+ 
+<div ng-controller="kController">
+    <div>
+<img ng-src="{{uye.profil}}"
+alt="{{ uye.isim }}"
+style="height:100px; width:100px" />
+</div>
+<div>
+İsim:<input type="text" id="isim" ng-model="uye.isim">
+</div>
+<div>
+Soyisim:<input type="text" id="soyisim" ng-model="uye.soyisim">
+</div>
+<div>
+Adı Soyadı : {{ uye.isim }} {{ uye.soyisim }}
+</div>
+
+
+</div>
+ 
+ 
+</body>
+</html>
